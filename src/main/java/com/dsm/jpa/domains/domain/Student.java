@@ -3,8 +3,8 @@ package com.dsm.jpa.domains.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "school")
-public class School {
+@Table(name = "student")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,14 +14,15 @@ public class School {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "location")
-    private String location;
+    @ManyToOne
+    @JoinColumn(name = "school_id", referencedColumnName = "id")
+    private School school;
 
-    public School() {}
-    public School(Long id, String name, String location) {
+    public Student() {}
+    public Student(Long id, String name, School school) {
         this.id = id;
         this.name = name;
-        this.location = location;
+        this.school = school;
     }
 
     public Long getId() {
@@ -32,7 +33,7 @@ public class School {
         return name;
     }
 
-    public String getLocation() {
-        return location;
+    public School getSchool() {
+        return school;
     }
 }
