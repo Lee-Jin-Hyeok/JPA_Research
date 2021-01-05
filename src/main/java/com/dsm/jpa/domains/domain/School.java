@@ -35,4 +35,13 @@ public class School {
     public String getLocation() {
         return location;
     }
+
+    @Override
+    public String toString() {
+        return "School{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }

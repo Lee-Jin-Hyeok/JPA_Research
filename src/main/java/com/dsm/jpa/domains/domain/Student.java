@@ -36,4 +36,13 @@ public class Student {
     public School getSchool() {
         return school;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", school=" + school +
+                '}';
+    }
 }

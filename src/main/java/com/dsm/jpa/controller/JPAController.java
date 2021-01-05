@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JPAController {
 
-    private JPAService jpaService;
+    private final JPAService jpaService;
 
     @Autowired
     public JPAController(JPAService jpaService) {
